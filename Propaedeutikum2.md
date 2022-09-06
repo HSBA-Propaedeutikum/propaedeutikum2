@@ -113,12 +113,17 @@ Auf den ersten Blick sieht eine `for`-Schleife sehr kompliziert aus, daher gehen
 
     let bedingung1 = true;
     let bedingung2 = true;
+
     while(bedingung1 || bedingung2) {
-        console.log("Das ist das " + i + "-te Mal");
+        console.log("Eine weitere Wiederholung");
         
-        bedingung1 = false;
         if(!bedingung1) {
             bedingung2 = false;
+            console.log("Zweite Bedingung ist falsch");
+        }
+        if(bedingung1) {
+            bedingung1 = false;
+            console.log("Erste Bedingung ist falsch");
         }
     }
 
