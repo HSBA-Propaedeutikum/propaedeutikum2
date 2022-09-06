@@ -111,10 +111,15 @@ Die nächste wichtige Art von Steuerelementen sind `for`-Schleifen und Iteration
 
 Auf den ersten Blick sieht eine `for`-Schleife sehr kompliziert aus, daher gehen wir auf alle Details ein. Um eine `for`-Schleifen auszuführen, müssen wir drei Befehle angeben. Der erste Ausdruck wird nur einmal zu Beginn der Schleife ausgeführt. Der zweite Ausdruck stellt eine Bedingung dar, welche vor jeder erneuten Ausführung erneut geprüft wird. Evaluiert die übergebene Bedingung zu `false`, so wird die Schleife abgebrochen, andernfalls wird der Codeblock im inneren ausgeführt. Die `for`-Schleife hat den Vorteil, dass wir eine eigene Variable nur für die Lebensdauer der Schleife definieren können, welche es uns erlaubt genau zu bestimmen in welcher Iteration wir uns befinden. Wenn wir aber einen Codeblock nur solange wiederholen wollen, wie eine bestimmte Bedingung gegeben ist, so eignet sich in diesem Fall eine `while`-Schleife besser.
 
-    let bedingung = true;
-    while(bedingung) {
+    let bedingung1 = true;
+    let bedingung2 = true;
+    while(bedingung1 || bedingung2) {
         console.log("Das ist das " + i + "-te Mal");
         
+        bedingung1 = false;
+        if(!bedingung1) {
+            bedingung2 = false;
+        }
     }
 
 Letztendlich kann man jede `for`-Schleife auch als `while`-Schleife schreiben kann und umgekehrt. Somit ist es unerheblich für welche Variante man sich entscheidet.
