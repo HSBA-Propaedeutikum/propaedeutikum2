@@ -17,8 +17,8 @@ Es gibt 6 mathematische Operatoren, welche es uns erlauben beliebige Zahlen mite
 |   `!=`  | NOT EQUALS TO            |  `x != 5`  |  `false`  |
 |   `>`   | GREATER THAN             |  `x > 5`   |  `false`  |
 |   `<`   | LESS THAN                |  `x < 6`   |  `true`   |
-|   `>`   | GREATER THAN OR EQUAL    |  `x >= 5`  |  `true`   |
-|   `<`   | LESS THAN OR EQUAL       |  `x <= 4`  |  `false`  |
+|   `>=`   | GREATER THAN OR EQUAL    |  `x >= 5`  |  `true`   |
+|   `<=`   | LESS THAN OR EQUAL       |  `x <= 4`  |  `false`  |
 
 ### Logische Operatoren
 Häufig wollen boolsche Werte miteinander Verknüpfen, um kompliziertere Sachverhalte ausdrücken zu können. Somit ist es wenig überraschend, dass es ähnlich wie für *Strings* und *Numbers* auch Operatoren für boolsche Werte gibt. Wir nehmen für diese Beispiel `x = 5` und `y = 11` an.
