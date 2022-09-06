@@ -70,7 +70,7 @@ Sollten wir mehrere Codeblöcke haben, von denen wir wollen, dass nur einer unte
         console.log("x ist durch 5 teilbar."); 
     } else if (x % 2 == 0) {
         // Wird nicht ausgeführt. Da die vorherige Bedingung bereits wahr war. 
-        console.log("x ist durch 2 teilbar."); eine Bedingung 
+        console.log("x ist durch 2 teilbar."); 
     } else {
         // Wird nur ausgeführt, wenn keine Bedingung zutrifft.
         console.log("x ist weder durch 2, 3 noch 5 teilbar.");
@@ -101,3 +101,20 @@ Eine andere Form der bedingten Ausführung sind `switch` Statements in JavaScrip
     }
 
 Wie wir diesem Beispiel entnehmen können können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wir werden die Vergleichsoperatoren auch noch andere Datentypen genauer unersuchen, um zu verstehen wie wir in diesen Fällen logische Aussagen treffen können. Wichtig ist, dass hier nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
+
+### Schleifen und Iteration
+Die nächste wichtige Art von Steuerelementen sind `for`-Schleifen und Iteration. Wir brauchen Schleifen oder Iteration stets, wenn wir einen Codeblock sehr häufig mit minimaler oder keiner Anpassung erneut ausführen lassen wollen. Es gibt mehrere Arten von `for` Schleifen, aber wir werden hier nur die am häufigsten läufige Variante erklären. 
+
+    for(let i = 0; i < 10; i++) {
+        console.log("Das ist das " + i + "-te Mal");
+    }
+
+Auf den ersten Blick sieht eine `for`-Schleife sehr kompliziert aus, daher gehen wir auf alle Details ein. Um eine `for`-Schleifen auszuführen, müssen wir drei Befehle angeben. Der erste Ausdruck wird nur einmal zu Beginn der Schleife ausgeführt. Der zweite Ausdruck stellt eine Bedingung dar, welche vor jeder erneuten Ausführung erneut geprüft wird. Evaluiert die übergebene Bedingung zu `false`, so wird die Schleife abgebrochen, andernfalls wird der Codeblock im inneren ausgeführt. Die `for`-Schleife hat den Vorteil, dass wir eine eigene Variable nur für die Lebensdauer der Schleife definieren können, welche es uns erlaubt genau zu bestimmen in welcher Iteration wir uns befinden. Wenn wir aber einen Codeblock nur solange wiederholen wollen, wie eine bestimmte Bedingung gegeben ist, so eignet sich in diesem Fall eine `while`-Schleife besser.
+
+    let bedingung = true;
+    while(bedingung) {
+        console.log("Das ist das " + i + "-te Mal");
+        
+    }
+
+Letztendlich kann man jede `for`-Schleife auch als `while`-Schleife schreiben kann und umgekehrt. Somit ist es unerheblich für welche Variante man sich entscheidet.
