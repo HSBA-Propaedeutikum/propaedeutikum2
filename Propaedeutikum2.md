@@ -128,3 +128,37 @@ Auf den ersten Blick sieht eine `for`-Schleife sehr kompliziert aus, daher gehen
     }
 
 Letztendlich kann man jede `for`-Schleife auch als `while`-Schleife schreiben kann und umgekehrt. Somit ist es unerheblich für welche Variante man sich entscheidet.
+
+## Funktionen 
+
+Eine Funktion erlaubt es uns einen Codeblock zu definieren der erst aufgerufen wird, wenn die Funktion selbst aufgerufen wird. Von der Synthax her können wir eine Funktion in JavaScript mit dem `function` definieren. 
+
+    function speak() {
+        console.log("Ich bin eine Funktion!");
+    }
+
+    console.log("Jetzt rufen wir die Funktion auf.)
+    speak();
+    Console.log("Jetzt rufen wir die Funktion nochmal auf.");
+    speak();
+
+Wir können eine Funktion so öft aufrufen wie wir wollen. Wird die Funktion nicht aufgerufen, so wird alles was im inneren der Funktion steht ignoriert. 
+Parameter erlauben es uns einer Funktion einen Wert zu übergeben, der auf die Ausführung der Funktion Einfluss nimmt. Wenn wir einen Parameter definiert so schreiben wir diesen einfach innerhalb der Klammern.
+
+    function speak(message) {
+        console.log("Wichtige Nachricht: " + message);
+    }
+
+    speak("Bananen sind gelb");
+
+Wenn wir wollen, dass eine Funktion ein Ergebis zurückgibt, welches wir weiter verwenden, so müssen wir unsere Funktion dazu anweisen. Dafür gibt es ein besonderes Schlüsselwort `return`. Am besten können wir das an einem Beispiel verdeutlichen.
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    console.log(add(10, 15)); // 25 
+
+Nachdem wir einen Wert in einer Funktion zurückgegeben haben können keine weiteren Befehle mehr in der Funktion angegeben werden.
+
+## Rekursion
