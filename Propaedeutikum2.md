@@ -46,7 +46,7 @@ Damit solche Operationen erfolghreich funktionieren wird in JavaScript zuvor ein
 |Operator  | Beschreibung                       | Beispiel                       |Ergebnis           |
 |:--------:|------------------------------------|--------------------------------|-------------------|
 |   `===`  | EQUAL VALUE AND EQUAL TYPE        |  `5 === "5"`, `"Max === "Max"` |  `false`, `true`  |
-|   `!==`  | NOT EQUAL VALUE AND NOT EQUAL TYPE |  `5 !== "5"`, `"Max === "Max"` |  `true`, `false`  |
+|   `!==`  | NOT EQUAL VALUE AND NOT EQUAL TYPE |  `5 !== "5"`, `"Max !== "Max"` |  `true`, `false`  |
 
 Wichtig ist zu beachten, dass Vergleichoperatoren auch für andere gemischte Datentypen unerwartete Ergbnisse liefert, so ist z.B. der Vergleich `"12" < "3"` wahr, weil bei einem String alle Teile alphabetisch einzeln verglichen werden und die `"1"` in `"12"` ist kleiner als eine `"3"`. Wenn wir hingegen den Vergleich `"12" < 3` betrachten, so ist dieser falsch.
 
