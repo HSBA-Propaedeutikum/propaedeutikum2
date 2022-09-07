@@ -30,6 +30,26 @@ Häufig wollen boolsche Werte miteinander Verknüpfen, um kompliziertere Sachver
 
 Wie bereits bei mathematischen Operatoren können wir logische Ausdrücke klammern, wenn wir wollen, dass ein Ausdruck zuerst evaluiert wird. Wenn keine Klammern gesetzt sind, so wird zuerst der **NOT** Operator, dann der **AND** Operator und zum Schluss der **OR** Operator ausgewertet.
 
+## Datentypen und Umwandlung
+Bisher haben wir mehrere Datentypen und Operatoren gesehen. In JavaScript gibt nur wenige primitive Datentypen: *Number*, *String*, *Boolean*, sind alles primitive Datentypen. Dabei ist auffällig, dass wir teilweise die gleichen Operatoren sowohl für *String*, *Number* als auch für *Boolean* benutzen können und auch alle Datentypen gemischt in Operatorausdrücken verwenden werden. Zum Beispiel können wir eine Zahl und einen String addieren oder auch mal subtrahieren.
+
+    let zahl = 5;
+    let string = "3";
+
+    console.log(zahl + string); // Liefert 53
+    console.log(zahl - string); // Liefert 2
+
+    console.log(5 == "5") //Liefert true
+
+Damit solche Operationen erfolghreich funktionieren wird in JavaScript zuvor eine Typumwandlung vollzogen, damit die Operation noch weiter Sinn ergibt. In unserem ersten Beipiel wird vor der Addition die Zahl in einen *String* umgewandelt. Da String miteinander verkettet werden, werden hier beide nur aneinander gereiht. In unserem zweiten Fall ergibt eine Subtraktion zwischen einer Zahl und einem String streng genommen keinen Sinn. Daher prüft JavaScript vorher ob sich der String auch zu einer Zahl umwandeln lässt. Ist dies nicht der Fall so wäre unser Ergebnis `NaN` was für *Not a Number* steht. Allerdings sollte man beachten, dass das Ergebnis `NaN` immer noch vom Typ `Number` ist, was für einige Verwirrung sorgen könnte. Es gibt größere und umfangreiche Umwandlungstabellen die wir hier nicht wiedergeben werden, allerdings ist es stets wichtig bei Vergleichen oder Operatoren zu beachten, dass wir nicht notwendigerweise den Typ einer Variable kennen, was zu unerwarteten Ergebnissen führen kann. Daher gibt es zwei wichtige Vergleichsoperatoren, welche wir hier erwähnen wollen. 
+
+|Operator  | Beschreibung                       | Beispiel                       |Ergebnis           |
+|:--------:|------------------------------------|--------------------------------|-------------------|
+|   `===`  | EQUAL VCALUE AND EQUAL TYPE        |  `5 === "5"`, `"Max === "Max"` |  `false`, `true`  |
+|   `!==`  | NOT EQUAL VALUE AND NOT EQUAL TYPE |  `5 !== "5"`, `"Max === "Max"` |  `true`, `false`  |
+
+Wichtig ist zu beachten, dass Vergleichoperatoren auch für andere gemischte Datentypen unerwartete Ergbnisse liefert, so ist z.B. der Vergleich `"12" < "3"` wahr, weil bei einem String alle Teile alphabetisch einzeln verglichen werden und die `"1"` in `"12"` ist kleiner als eine `"3"`. Wenn wir hingegen den Vergleich `"12" < 3` betrachten, so ist dieser falsch.
+
 ## Strukturierte Programmierung 
 Selbsterständlich sind boolsche Werte für sich genommen wenig interessant. Aber sie sind wichtige Grundlage der sogenannten strukturierten Programmierung. Bisher haben wir die imperative Programmierung kennengelernt, welche besagt, dass Befehle Zeile für Zeile exakt vom Computer ausgeführt werden. Was ist aber, wenn wir bestimmte Befehle nur unter bestimmten Bedingungen oder sehr häufig ausführen wollen? An dieser Stelle kommt die strukturierte Programmierung in Spiel. Sie erlaubt es uns, die Ausführung von Codeblöcken an Bedingungen in Form von boolschen Werten zu knüpfen.
 
@@ -159,6 +179,19 @@ Wenn wir wollen, dass eine Funktion ein Ergebis zurückgibt, welches wir weiter 
 
     console.log(add(10, 15)); // 25 
 
-Nachdem wir einen Wert in einer Funktion zurückgegeben haben können keine weiteren Befehle mehr in der Funktion angegeben werden.
+Nachdem wir einen Wert in einer Funktion zurückgegeben haben können keine weiteren Befehle mehr in der Funktion angegeben werden. Wenn wir weitere Befehle nach dem `return` angeben, so wird ein *unreachable code error* geworfen.
 
 ## Rekursion
+Selbstvertändlich können wir in einer Funktion auch andere Funktionen aufrufen solange diese darüber definert wurde. Überraschender ist es hingegen, dass wir eine Funktion auch in sich selbst aufrufen können. Eine solche Selbstreferenz bezeichnet man als **Rekursion**. Rekursionen sind auf den ersten Blick ein wenig verwirrend, erlauben es uns aber gelegentlich eine schwierige Berechnung auf einen einfacheren Fall zurückzuführen. Wichtig ist es bei Rekursion darauf zu achten, dass man nicht aus Versehen eine Endlosschleife auslöst und das Programm zum Absturz bringt. Am besten können wir dies an einem Beispiel verdeutlichen. Angenommen wir wollen die Fakultät `n = n*(n-1)*(n-2)*...*1` einer Zahl berechnen. So könnten wir dies mit einer rekursiven Funktion lösen.
+
+    function fakultaet(n) {
+        if(n == 0) {
+            return 1
+        } else {
+            return n * fakultaet(n - 1);
+        }
+    }
+
+
+
+
