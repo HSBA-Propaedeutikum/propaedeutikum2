@@ -1,4 +1,4 @@
-## Aufgaben
+# Aufgaben
 
 1. Initialisiere eine Variable für eine beliebige Zahl. Anschließend prüfe ob die Zahl eine durch 2 teilbare Zahl zwischen 0 und 100 ist, welche nicht 42 sein soll.
 
