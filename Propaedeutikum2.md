@@ -120,7 +120,7 @@ Eine andere Form der bedingten Ausführung sind `switch` Statements in JavaScrip
             console.log("Es ist Wochenende");
     }
 
-Wie wir diesem Beispiel entnehmen können können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wir werden die Vergleichsoperatoren auch noch andere Datentypen genauer unersuchen, um zu verstehen wie wir in diesen Fällen logische Aussagen treffen können. Wichtig ist, dass hier nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
+Wie wir diesem Beispiel entnehmen können können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wichtig ist zu bedenken, dass für den Vergleich der Fälle ein `===` Vergleich benutzt wird. Wichtig ist, dass hier nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
 
 ### Schleifen und Iteration
 Die nächste wichtige Art von Steuerelementen sind `for`-Schleifen und Iteration. Wir brauchen Schleifen oder Iteration stets, wenn wir einen Codeblock sehr häufig mit minimaler oder keiner Anpassung erneut ausführen lassen wollen. Es gibt mehrere Arten von `for` Schleifen, aber wir werden hier nur die am häufigsten läufige Variante erklären. 
