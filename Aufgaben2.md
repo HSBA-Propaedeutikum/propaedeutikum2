@@ -6,7 +6,7 @@
         
         [°C] = ([°F] − 32) × 5⁄9
 
-2. Schreibe eine Funktion, welche einen String so häufig wiederholt wie angegeben. Diese Funktion nimmt als Argumente einen String entgegen und eine positive ganze Zahl.
+2. Schreibe eine Funktion `repeat(word, n)`, welche einen String so häufig wiederholt wie angegeben.
 
 3. Schreibe eine Funktion, welche die n-te Fibonacci-Zahl berechnet. Die Reihe der Fibonaccizahlen hat die Eigenschaft, dass das die nächste Zahl immer die Summe der beiden Vorgänger ist.
 
