@@ -17,16 +17,16 @@ Es gibt 6 mathematische Operatoren, welche es uns erlauben beliebige Zahlen mite
 |   `!=`  | NOT EQUALS TO            |  `x != 5`  |  `false`  |
 |   `>`   | GREATER THAN             |  `x > 5`   |  `false`  |
 |   `<`   | LESS THAN                |  `x < 6`   |  `true`   |
-|   `>=`   | GREATER THAN OR EQUAL    |  `x >= 5`  |  `true`   |
-|   `<=`   | LESS THAN OR EQUAL       |  `x <= 4`  |  `false`  |
+|   `>=`  | GREATER THAN OR EQUAL    |  `x >= 5`  |  `true`   |
+|   `<=`  | LESS THAN OR EQUAL       |  `x <= 4`  |  `false`  |
 
 ### Logische Operatoren
 Häufig wollen boolsche Werte miteinander Verknüpfen, um kompliziertere Sachverhalte ausdrücken zu können. Somit ist es wenig überraschend, dass es ähnlich wie für *Strings* und *Numbers* auch Operatoren für boolsche Werte gibt. Wir nehmen für diese Beispiel `x = 5` und `y = 11` an.
-|Operator | Beschreibung             | Beispiel                      |Ergebnis   |
-|:-------:|--------------------------|-------------------------------|-----------|
-|   `&&`  | AND                      | `x >= 10 && x <= 20`          |`false`    |
-|  `\|\|` | OR                       | `x > 20 \|\| x == 5`          |`true`     |
-|   `!`   | NOT                      | `!(x >= 10 && x <= 20)`       |`true`     |
+|Operator | Beschreibung  | Beispiel                  |Ergebnis   |
+|:-------:|---------------|---------------------------|-----------|
+|   `&&`  | AND           | `x >= 10 && x <= 20`      |`false`    |
+|  `\|\|` | OR            | `x > 20 \|\| x == 5`      |`true`     |
+|   `!`   | NOT           | `!(x >= 10 && x <= 20)`   |`true`     |
 
 Wie bereits bei mathematischen Operatoren können wir logische Ausdrücke klammern, wenn wir wollen, dass ein Ausdruck zuerst evaluiert wird. Wenn keine Klammern gesetzt sind, so wird zuerst der **NOT** Operator, dann der **AND** Operator und zum Schluss der **OR** Operator ausgewertet.
 
@@ -181,6 +181,24 @@ Wenn wir wollen, dass eine Funktion ein Ergebis zurückgibt, welches wir weiter 
 
 Nachdem wir einen Wert in einer Funktion zurückgegeben haben können keine weiteren Befehle mehr in der Funktion angegeben werden. Wenn wir weitere Befehle nach dem `return` angeben, so wird ein *unreachable code error* geworfen.
 
+## Lebensdauer (Scope) von Variablen 
+Selbstverständlich können wir auch Variablen innerhalb einer Funktion deklarieren. Wichtig ist zu verstehen, dass diese Variablen nur innerhalb der Funktion zugänglich sind. Außerhalb von der Funktion ist eine solche Variable nicht deklariert und sie wird nach Ausführung der Funktion wieder gelöscht und jeder Wert den diese Variable hatte ist danach verloren, solange bis die Funktion wieder ausgeführt wird.
+
+    function func() {
+        let a = 1;
+    }
+
+    console.log(a); // Wirft eine Fehlermeldung!
+
+Das gilt aber nicht falls wir in einer Funktion einer Variablen einen Wert zuweisen ohne, dass diese vorher initialisiert wurde. JavaScript geht dann implizit davon aus, dass diese Variable außerhalb global initialisiert wurde und macht diese auch außerhalb der Funktion verfügbar.
+
+
+    function func() {
+        a = 1;
+    }
+
+    console.log(a); // Achtung funktioniert!
+
 ## Rekursion
 Selbstvertändlich können wir in einer Funktion auch andere Funktionen aufrufen solange diese darüber definert wurde. Überraschender ist es hingegen, dass wir eine Funktion auch in sich selbst aufrufen können. Eine solche Selbstreferenz bezeichnet man als **Rekursion**. Rekursionen sind auf den ersten Blick ein wenig verwirrend, erlauben es uns aber gelegentlich eine schwierige Berechnung auf einen einfacheren Fall zurückzuführen. Wichtig ist es bei Rekursion darauf zu achten, dass man nicht aus Versehen eine Endlosschleife auslöst und das Programm zum Absturz bringt. Am besten können wir dies an einem Beispiel verdeutlichen. Angenommen wir wollen die Fakultät `n = n*(n-1)*(n-2)*...*1` einer Zahl berechnen. So könnten wir dies mit einer rekursiven Funktion lösen.
 
@@ -191,6 +209,8 @@ Selbstvertändlich können wir in einer Funktion auch andere Funktionen aufrufen
             return n * fakultaet(n - 1);
         }
     }
+
+
 
 
 
