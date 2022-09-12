@@ -13,5 +13,7 @@
         1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
 
 4. Schreibe eine Funktion `choose(n, k)`  , welche den Binomialkoeffizient `n` über `k` berechnet. Benutze dazu die Rekursionsvorschrift des Pascalschen Dreiecks. 
+    <p align="center">
+        <img src="Pascal_triangle.png" /> 
+    </p>
     
-    ![Pascalsches Dreieck](Pascal_triangle.png)
