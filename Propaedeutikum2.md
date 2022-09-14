@@ -1,15 +1,15 @@
 ## Boolsche Datentypen 
-Beim letzten Mal haben wir bereits zwei wichtige Datentypen in JavaScript kennengelernt, die Datentypen *String* und *Number*. Nun lernen wir einen weiteren wichtigen Datentypen kennen. Den Datentyp *Boolean*. Anders als Strings, welche aus beliebigen Zeichenketten bestehen und der Datentype Number, welcher Zahlen beliebiger Größe beinhaltet, hat der Datentyp Boolean nur die zwei Ausprägungen `true` und `false`.  
-Eine häufige Art wie wir boolsche Werte erzeugen ist über Abfragen mit **Vergleichsoperatoren**.
+Beim letzten Mal haben wir bereits zwei wichtige Datentypen in JavaScript kennengelernt: *String* und *Number*. Nun lernen wir einen weiteren kennen, den Datentyp *Boolean*. Anders als *String*, welcher aus beliebigen Zeichenketten besteht und *Numbers*, welche Zahlen in beliebiger Größe beinhalten, haben *Booleans* nur die zwei Ausprägungen `true` und `false`.  
+Eine häufige Art, wie wir boolsche Werte erzeugen, ist über Abfragen mit **Vergleichsoperatoren**.
 
 ### Mathematische Vergleichsoperatoren
-Vergleichsoperatoren vergleichen wie der Name andeutet zwei beliebige Zahlen und weist dem Ergebnis einen boolschen Wert zu. Am besten können wir dies anhand eines Beispieles erläutern.
+Vergleichsoperatoren vergleichen, wie der Name andeutet, zwei beliebige Zahlen und weist dem Ergebnis einen boolschen Wert zu. Am besten können wir dies anhand eines Beispiels erläutern:
 
     let x = 6;
     console.log(x >= 5); // liefert true zurück
     console.log(x < 4); // liefert false zurück
 
-Es gibt 6 mathematische Operatoren, welche es uns erlauben beliebige Zahlen miteinander zu vergleichen. Es muss beachtet werden, dass nur Werte vom Typ *Number* miteinander verglichen werden dürfen, da es sonst zu unerwarteten Konsequenzen kommen kann auf die wir später noch eingehen werden. Für unser nachfolgenden Beispiel ist `x = 5`.
+Es gibt 6 mathematische Operatoren, welche es uns erlauben, beliebige Zahlen miteinander zu vergleichen. Es muss beachtet werden, dass nur Werte vom Typ *Number* miteinander verglichen werden dürfen, da es sonst zu unerwarteten Konsequenzen kommen kann. Für unser nachfolgendes Beispiel nehmen wir `x = 5` an.
 
 |Operator | Beschreibung             | Beispiel   |Ergebnis   |
 |:-------:|--------------------------|------------|-----------|
@@ -21,7 +21,7 @@ Es gibt 6 mathematische Operatoren, welche es uns erlauben beliebige Zahlen mite
 |   `<=`  | LESS THAN OR EQUAL       |  `x <= 4`  |  `false`  |
 
 ### Logische Operatoren
-Häufig wollen boolsche Werte miteinander Verknüpfen, um kompliziertere Sachverhalte ausdrücken zu können. Somit ist es wenig überraschend, dass es ähnlich wie für *Strings* und *Numbers* auch Operatoren für boolsche Werte gibt. Wir nehmen für diese Beispiel `x = 5` und `y = 11` an.
+Häufig wollen wir boolsche Werte miteinander verknüpfen, um kompliziertere Sachverhalte ausdrücken zu können. Dafür gibt es logische Operatoren. Wir nehmen für dieses Beispiel `x = 5` und `y = 11` an.
 |Operator | Beschreibung  | Beispiel                  |Ergebnis   |
 |:-------:|---------------|---------------------------|-----------|
 |   `&&`  | AND           | `x >= 10 && x <= 20`      |`false`    |
@@ -31,7 +31,7 @@ Häufig wollen boolsche Werte miteinander Verknüpfen, um kompliziertere Sachver
 Wie bereits bei mathematischen Operatoren können wir logische Ausdrücke klammern, wenn wir wollen, dass ein Ausdruck zuerst evaluiert wird. Wenn keine Klammern gesetzt sind, so wird zuerst der **NOT** Operator, dann der **AND** Operator und zum Schluss der **OR** Operator ausgewertet.
 
 ## Datentypen und Umwandlung
-Bisher haben wir mehrere Datentypen und Operatoren gesehen. In JavaScript gibt nur wenige primitive Datentypen: *Number*, *String*, *Boolean*, sind alles primitive Datentypen. Dabei ist auffällig, dass wir teilweise die gleichen Operatoren sowohl für *String*, *Number* als auch für *Boolean* benutzen können und auch alle Datentypen gemischt in Operatorausdrücken verwenden werden. Zum Beispiel können wir eine Zahl und einen String addieren oder auch mal subtrahieren.
+Bisher haben wir mehrere Datentypen (*Number*, *String*, *Boolean*) und Operatoren gesehen. Dabei ist auffällig, dass wir teilweise die gleichen Operatoren für verschiedene Datentypen benutzen können und alle gemischt vorkommen können. Zum Beispiel können wir eine Zahl und einen String addieren oder auch mal subtrahieren.
 
     let zahl = 5;
     let string = "3";
@@ -41,20 +41,20 @@ Bisher haben wir mehrere Datentypen und Operatoren gesehen. In JavaScript gibt n
 
     console.log(5 == "5") //Liefert true
 
-Damit solche Operationen erfolghreich funktionieren wird in JavaScript zuvor eine Typumwandlung vollzogen, damit die Operation noch weiter Sinn ergibt. In unserem ersten Beipiel wird vor der Addition die Zahl in einen *String* umgewandelt. Da String miteinander verkettet werden, werden hier beide nur aneinander gereiht. In unserem zweiten Fall ergibt eine Subtraktion zwischen einer Zahl und einem String streng genommen keinen Sinn. Daher prüft JavaScript vorher ob sich der String auch zu einer Zahl umwandeln lässt. Ist dies nicht der Fall so wäre unser Ergebnis `NaN` was für *Not a Number* steht. Allerdings sollte man beachten, dass das Ergebnis `NaN` immer noch vom Typ `Number` ist, was für einige Verwirrung sorgen könnte. Es gibt größere und umfangreiche Umwandlungstabellen die wir hier nicht wiedergeben werden, allerdings ist es stets wichtig bei Vergleichen oder Operatoren zu beachten, dass wir nicht notwendigerweise den Typ einer Variable kennen, was zu unerwarteten Ergebnissen führen kann. Daher gibt es zwei wichtige Vergleichsoperatoren, welche wir hier erwähnen wollen. 
+Damit solche Operationen erfolgreich funktionieren können, wird in JavaScript zuvor eine Typumwandlung vollzogen. In unserem ersten Beipiel wird vor der Addition die Zahl in einen *String* umgewandelt. Da String miteinander verkettet werden, werden hier beide nur aneinander gereiht. In unserem zweiten Fall ergibt eine Subtraktion zwischen einer Zahl und einem String streng genommen keinen Sinn. Daher prüft JavaScript vorher, ob sich der String auch zu einer Zahl umwandeln lässt und führt die Rechnung aus. Ist dies nicht der Fall, so wäre unser Ergebnis `NaN` (= *Not a Number*). Es gibt größere und umfangreichere Umwandlungstabellen, die wir hier nicht wiedergeben werden, allerdings ist es stets wichtig, bei Vergleichen oder Operatoren zu beachten, dass wir nicht notwendigerweise den Typ einer Variable kennen. Aus diesem Grund gibt es zwei Vergleichsoperatoren, welche wir hier erwähnen wollen. 
 
 |Operator  | Beschreibung                       | Beispiel                       |Ergebnis           |
 |:--------:|------------------------------------|--------------------------------|-------------------|
 |   `===`  | EQUAL VALUE AND EQUAL TYPE        |  `5 === "5"`, `"Max === "Max"` |  `false`, `true`  |
 |   `!==`  | NOT EQUAL VALUE AND NOT EQUAL TYPE |  `5 !== "5"`, `"Max !== "Max"` |  `true`, `false`  |
 
-Wichtig ist zu beachten, dass Vergleichoperatoren auch für andere gemischte Datentypen unerwartete Ergbnisse liefert, so ist z.B. der Vergleich `"12" < "3"` wahr, weil bei einem String alle Teile alphabetisch einzeln verglichen werden und die `"1"` in `"12"` ist kleiner als eine `"3"`. Wenn wir hingegen den Vergleich `"12" < 3` betrachten, so ist dieser falsch.
+Wichtig ist zu beachten, dass Vergleichsoperatoren auch für andere gemischte Datentypen unerwartete Ergbnisse lieferen. So ist beispielsweise der Vergleich `"12" < "3"` wahr, weil bei einem String alle Teile alphabetisch einzeln verglichen werden und die `"1"` in `"12"` kleiner als eine `"3"` ist. Wenn wir hingegen den Vergleich `"12" < 3` betrachten, so ist dieser falsch.
 
 ## Strukturierte Programmierung 
-Selbsterständlich sind boolsche Werte für sich genommen wenig interessant. Aber sie sind wichtige Grundlage der sogenannten strukturierten Programmierung. Bisher haben wir die imperative Programmierung kennengelernt, welche besagt, dass Befehle Zeile für Zeile exakt vom Computer ausgeführt werden. Was ist aber, wenn wir bestimmte Befehle nur unter bestimmten Bedingungen oder sehr häufig ausführen wollen? An dieser Stelle kommt die strukturierte Programmierung in Spiel. Sie erlaubt es uns, die Ausführung von Codeblöcken an Bedingungen in Form von boolschen Werten zu knüpfen.
+Selbstverständlich sind boolsche Werte für sich genommen wenig interessant. Aber sie sind wichtige Grundlage der sogenannten strukturierten Programmierung. Bisher haben wir die imperative Programmierung kennengelernt, welche besagt, dass Befehle Zeile für Zeile exakt vom Computer ausgeführt werden. Was ist aber, wenn wir bestimmte Befehle nur unter bestimmten Bedingungen oder sehr häufig ausführen wollen? An dieser Stelle kommt die strukturierte Programmierung ins Spiel. Sie knüpft die Ausführung von Codeblöcken an Bedingungen (in Form von boolschen Werten).
 
 ### Bedingte Ausführung
-Die einfachste bedingte Anweisung is eine `if` Verzweigung. Wie das Schlüsselwort hier schon andeutet wird der eingeschlossene Codeblock einer if-Verzweigung nur ausgeführt, falls die zugrundeliegende Bedingung `true` ist.
+Die einfachste bedingte Anweisung is eine `if` Verzweigung. Wie das Schlüsselwort hier schon andeutet, wird der eingeschlossene Codeblock einer if-Verzweigung nur ausgeführt, falls die zugrundeliegende Bedingung `true` ist.
 
     let x = 7;
 
@@ -67,7 +67,8 @@ Die einfachste bedingte Anweisung is eine `if` Verzweigung. Wie das Schlüsselwo
     if (x > 10) {
         console.log("x ist größer als 10")
     }
-Da wir häufig beim Abfragen einer Bedingung einen Codeblock oder im negativen Falle einen anderen Codeblock ausführen wollen können wir mit dem Schlüsselwort `else` Befehle geben, sofern die zugrunde liegende Bedingung falsch ist.
+    
+Das Schlüsselwort `else` können wir direkt nach einer `if`-Verzweigung verwenden und der Code im Inneren wird nur dann ausgeführt, wenn die Bedingung `false`ist.
 
     let x = 5;
 
@@ -78,7 +79,7 @@ Da wir häufig beim Abfragen einer Bedingung einen Codeblock oder im negativen F
         console.log("Die Antwort ist nicht 42");
     }
 
-Sollten wir mehrere Codeblöcke haben, von denen wir wollen, dass nur einer unter einer bestimmten Bedingung ausgeführt wird, so gibt es das Schlüsselwort `else if`, welches es uns erlaubt nach einer `if` Abfrage weitere Abfragen durchzuführen. Wichtig ist zu beachten, dass alle weiteren `else if` Bedingungen ignoriert werden, falls bereits eine frühere als wahr evaluiert wird.
+Sollten wir mehrere Codeblöcke haben, von denen wir wollen, dass nur einer ausgeführt wird, so gibt es das Schlüsselwort `else if`, welches es uns erlaubt, nach einer `if`-Abfrage weitere Abfragen durchzuführen. Wichtig ist zu beachten, dass alle weiteren `else if` Bedingungen ignoriert werden, falls bereits eine frühere als wahr evaluiert wurde.
 
     let  x = 10;
      
@@ -89,7 +90,7 @@ Sollten wir mehrere Codeblöcke haben, von denen wir wollen, dass nur einer unte
         // Wird ausgeführt.
         console.log("x ist durch 5 teilbar."); 
     } else if (x % 2 == 0) {
-        // Wird nicht ausgeführt. Da die vorherige Bedingung bereits wahr war. 
+        // Wird nicht ausgeführt, da die vorherige Bedingung bereits wahr war. 
         console.log("x ist durch 2 teilbar."); 
     } else {
         // Wird nur ausgeführt, wenn keine Bedingung zutrifft.
@@ -107,20 +108,20 @@ Eine andere Form der bedingten Ausführung sind `switch` Statements in JavaScrip
         case "Dienstag":
             console.log("Es ist Dienstag");
             break;
-        case "Dienstag":
+        case "Mittwoch":
             console.log("Es ist Mittwoch");
             break;
-        case "Dienstag":
+        case "Donnerstag":
             console.log("Es ist Donnerstag");
             break;
-        case "Dienstag":
+        case "Freitag":
             console.log("Es ist Freitag");
             break;
         default: 
             console.log("Es ist Wochenende");
     }
 
-Wie wir diesem Beispiel entnehmen können können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wichtig ist zu bedenken, dass für den Vergleich der Fälle ein `===` Vergleich benutzt wird. Wichtig ist, dass hier nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
+Wie wir aus diesem Beispiel entnehmen können, können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wichtig ist zu bedenken, dass für den Vergleich der Fälle ein `===` Vergleich benutzt wird. Wichtig ist, dass hier nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
 
 ### Schleifen und Iteration
 Die nächste wichtige Art von Steuerelementen sind `for`-Schleifen und Iteration. Wir brauchen Schleifen oder Iteration stets, wenn wir einen Codeblock sehr häufig mit minimaler oder keiner Anpassung erneut ausführen lassen wollen. Es gibt mehrere Arten von `for` Schleifen, aber wir werden hier nur die am häufigsten läufige Variante erklären. 
