@@ -97,7 +97,7 @@ Sollten wir mehrere Codeblöcke haben, von denen wir wollen, dass nur einer ausg
         console.log("x ist weder durch 2, 3 noch 5 teilbar.");
     }
 
-Eine andere Form der bedingten Ausführung sind `switch` Statements in JavaScript. Von der Synthax her wird bei switch ein Ausdruck ausgewertet und mit definierten Fällen abgeglichen.
+Eine andere Form der bedingten Ausführung sind `switch` Statements in JavaScript. Von der Synthax her wird bei switch ein Ausdruck ausgewertet und mit vordefinierten Fällen abgeglichen.
 
     let tag = "Montag";
 
@@ -121,10 +121,10 @@ Eine andere Form der bedingten Ausführung sind `switch` Statements in JavaScrip
             console.log("Es ist Wochenende");
     }
 
-Wie wir aus diesem Beispiel entnehmen können, können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wichtig ist zu bedenken, dass für den Vergleich der Fälle ein `===` Vergleich benutzt wird. Wichtig ist, dass hier nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
+Wie wir aus diesem Beispiel entnehmen können, können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wichtig ist zu bedenken, dass für den Vergleich der Fälle ein `===` Vergleich benutzt wird. Auch muss nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
 
 ### Schleifen und Iteration
-Die nächste wichtige Art von Steuerelementen sind `for`-Schleifen und Iteration. Wir brauchen Schleifen oder Iteration stets, wenn wir einen Codeblock sehr häufig mit minimaler oder keiner Anpassung erneut ausführen lassen wollen. Es gibt mehrere Arten von `for` Schleifen, aber wir werden hier nur die am häufigsten läufige Variante erklären. 
+Die nächste Art von Steuerelement ist eine `for`-Schleife. Wir brauchen Schleifen oder Iteration stets, wenn wir einen Codeblock sehr häufig mit minimaler oder keiner Anpassung erneut ausführen lassen wollen. Es gibt mehrere Arten von `for` Schleifen, aber wir werden hier nur die am häufigsten gängige Variante erklären. 
 
     for(let i = 0; i < 10; i++) {
         console.log("Das ist das " + i + "-te Mal");
@@ -152,7 +152,7 @@ Letztendlich kann man jede `for`-Schleife auch als `while`-Schleife schreiben ka
 
 ## Funktionen 
 
-Eine Funktion erlaubt es uns einen Codeblock zu definieren der erst aufgerufen wird, wenn die Funktion selbst aufgerufen wird. Von der Synthax her können wir eine Funktion in JavaScript mit dem `function` definieren. 
+Eine Funktion erlaubt es uns einen Codeblock zu definieren der erst aufgerufen wird, wenn die Funktion selbst aufgerufen wird. Von der Synthax her können wir eine Funktion in JavaScript mit dem Schlüsselwort `function` definieren. 
 
     function speak() {
         console.log("Ich bin eine Funktion!");
@@ -163,7 +163,7 @@ Eine Funktion erlaubt es uns einen Codeblock zu definieren der erst aufgerufen w
     Console.log("Jetzt rufen wir die Funktion nochmal auf.");
     speak();
 
-Wir können eine Funktion so öft aufrufen wie wir wollen. Wird die Funktion nicht aufgerufen, so wird alles was im inneren der Funktion steht ignoriert. 
+Wir können eine Funktion so oft aufrufen wie wir wollen. Wird die Funktion nicht aufgerufen, so wird alles was im inneren der Funktion steht ignoriert. 
 Parameter erlauben es uns einer Funktion einen Wert zu übergeben, der auf die Ausführung der Funktion Einfluss nimmt. Wenn wir einen Parameter definiert so schreiben wir diesen einfach innerhalb der Klammern.
 
     function speak(message) {
@@ -177,8 +177,8 @@ Wenn wir wollen, dass eine Funktion ein Ergebis zurückgibt, welches wir weiter 
     function add(a, b) {
         return a + b;
     }
-
-    console.log(add(10, 15)); // 25 
+    let result = add(10, 15);
+    console.log(result); // 25 
 
 Nachdem wir einen Wert in einer Funktion zurückgegeben haben können keine weiteren Befehle mehr in der Funktion angegeben werden. Wenn wir weitere Befehle nach dem `return` angeben, so wird ein *unreachable code error* geworfen.
 
