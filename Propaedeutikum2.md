@@ -41,7 +41,7 @@ Bisher haben wir mehrere Datentypen (*Number*, *String*, *Boolean*) und Operator
 
     console.log(5 == "5") //Liefert true
 
-Damit solche Operationen erfolgreich funktionieren können, wird in JavaScript zuvor eine Typumwandlung vollzogen. In unserem ersten Beipiel wird vor der Addition die Zahl in einen *String* umgewandelt. Da String miteinander verkettet werden, werden hier beide nur aneinander gereiht. In unserem zweiten Fall ergibt eine Subtraktion zwischen einer Zahl und einem String streng genommen keinen Sinn. Daher prüft JavaScript vorher, ob sich der String auch zu einer Zahl umwandeln lässt und führt die Rechnung aus. Ist dies nicht der Fall, so wäre unser Ergebnis `NaN` (= *Not a Number*). Es gibt größere und umfangreichere Umwandlungstabellen, die wir hier nicht wiedergeben werden, allerdings ist es stets wichtig, bei Vergleichen oder Operatoren zu beachten, dass wir nicht notwendigerweise den Typ einer Variable kennen. Aus diesem Grund gibt es zwei Vergleichsoperatoren, welche wir hier erwähnen wollen. 
+Damit solche Operationen erfolgreich funktionieren können, wird in JavaScript zuvor eine Typumwandlung vollzogen. In unserem ersten Beipiel wird vor der Addition die Zahl in einen *String* umgewandelt. Da Strings miteinander verkettet werden, werden hier beide nur aneinander gereiht. In unserem zweiten Fall ergibt eine Subtraktion zwischen einer Zahl und einem String streng genommen keinen Sinn. Daher prüft JavaScript vorher, ob sich der String auch zu einer Zahl umwandeln lässt und führt die Rechnung aus. Ist dies nicht der Fall, so wäre unser Ergebnis `NaN` (= *Not a Number*). Es gibt größere und umfangreichere Umwandlungstabellen, die wir hier nicht wiedergeben werden, allerdings ist es stets wichtig, bei Vergleichen oder Operatoren zu beachten, dass wir nicht notwendigerweise den Typ einer Variable kennen. Aus diesem Grund gibt es zwei Vergleichsoperatoren, welche wir hier erwähnen wollen. 
 
 |Operator  | Beschreibung                       | Beispiel                       |Ergebnis           |
 |:--------:|------------------------------------|--------------------------------|-------------------|
@@ -121,16 +121,16 @@ Eine andere Form der bedingten Ausführung sind `switch` Statements in JavaScrip
             console.log("Es ist Wochenende");
     }
 
-Wie wir aus diesem Beispiel entnehmen können, können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wichtig ist zu bedenken, dass für den Vergleich der Fälle ein `===` Vergleich benutzt wird. Auch muss nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
+Wie wir aus diesem Beispiel entnehmen können, können wir bedingte Ausführungen auch für andere Datentypen als *Number* durchführen. Wichtig ist, dass für den Vergleich der Fälle ein `===` Vergleich benutzt wird. Auch muss nach jedem `case` ein `break` gesetzt wird, da ansonsten nach dem ersten zutreffenden Fall auch alle weiteren Fälle ausgeführt werden. 
 
 ### Schleifen und Iteration
-Die nächste Art von Steuerelement ist eine `for`-Schleife. Wir brauchen Schleifen oder Iteration stets, wenn wir einen Codeblock sehr häufig mit minimaler oder keiner Anpassung erneut ausführen lassen wollen. Es gibt mehrere Arten von `for` Schleifen, aber wir werden hier nur die am häufigsten gängige Variante erklären. 
+Die nächste Art von Steuerelement ist eine `for`-Schleife. Wir brauchen Schleifen oder Iteration stets, wenn wir einen Codeblock sehr häufig mit minimaler oder keiner Anpassung erneut ausführen lassen wollen. Es gibt mehrere Arten von `for` Schleifen. Wir werden hier die gängigste Variante erklären. 
 
     for(let i = 0; i < 10; i++) {
         console.log("Das ist das " + i + "-te Mal");
     }
 
-Auf den ersten Blick sieht eine `for`-Schleife sehr kompliziert aus, daher gehen wir auf alle Details ein. Um eine `for`-Schleifen auszuführen, müssen wir drei Befehle angeben. Der erste Ausdruck wird nur einmal zu Beginn der Schleife ausgeführt. Der zweite Ausdruck stellt eine Bedingung dar, welche vor jeder erneuten Ausführung erneut geprüft wird. Evaluiert die übergebene Bedingung zu `false`, so wird die Schleife abgebrochen, andernfalls wird der Codeblock im inneren ausgeführt. Die `for`-Schleife hat den Vorteil, dass wir eine eigene Variable nur für die Lebensdauer der Schleife definieren können, welche es uns erlaubt genau zu bestimmen in welcher Iteration wir uns befinden. Wenn wir aber einen Codeblock nur solange wiederholen wollen, wie eine bestimmte Bedingung gegeben ist, so eignet sich in diesem Fall eine `while`-Schleife besser.
+Auf den ersten Blick sieht eine `for`-Schleife sehr kompliziert aus, daher gehen wir auf alle Details ein. Um eine `for`-Schleifen auszuführen, müssen wir drei Befehle angeben. Der erste Ausdruck wird nur einmal zu Beginn der Schleife ausgeführt. Der zweite Ausdruck stellt eine Bedingung dar, welche vor jeder erneuten Ausführung erneut geprüft wird. Evaluiert die übergebene Bedingung zu `false`, so wird die Schleife abgebrochen, andernfalls wird der Codeblock im Inneren ausgeführt. Die `for`-Schleife hat den Vorteil, dass wir eine eigene Variable nur für die Lebensdauer der Schleife definieren können, welche es uns erlaubt, genau zu bestimmen, in welcher Iteration wir uns befinden. Wenn wir aber einen Codeblock nur solange wiederholen wollen, wie eine bestimmte Bedingung gegeben ist, so eignet sich in diesem Fall eine `while`-Schleife besser.
 
     let bedingung1 = true;
     let bedingung2 = true;
@@ -148,11 +148,11 @@ Auf den ersten Blick sieht eine `for`-Schleife sehr kompliziert aus, daher gehen
         }
     }
 
-Letztendlich kann man jede `for`-Schleife auch als `while`-Schleife schreiben kann und umgekehrt. Somit ist es unerheblich für welche Variante man sich entscheidet.
+Letztendlich kann man jede `for`-Schleife auch als `while`-Schleife schreiben und umgekehrt. Somit ist es unerheblich für welche Variante man sich entscheidet.
 
 ## Funktionen 
 
-Eine Funktion erlaubt es uns einen Codeblock zu definieren der erst aufgerufen wird, wenn die Funktion selbst aufgerufen wird. Von der Synthax her können wir eine Funktion in JavaScript mit dem Schlüsselwort `function` definieren. 
+Eine Funktion erlaubt uns, einen Codeblock zu definieren, der erst aufgerufen wird, wenn die Funktion selbst aufgerufen wird. Von der Synthax her können wir eine Funktion in JavaScript mit dem Schlüsselwort `function` definieren. 
 
     function speak() {
         console.log("Ich bin eine Funktion!");
@@ -163,8 +163,8 @@ Eine Funktion erlaubt es uns einen Codeblock zu definieren der erst aufgerufen w
     Console.log("Jetzt rufen wir die Funktion nochmal auf.");
     speak();
 
-Wir können eine Funktion so oft aufrufen wie wir wollen. Wird die Funktion nicht aufgerufen, so wird alles was im inneren der Funktion steht ignoriert. 
-Parameter erlauben es uns einer Funktion einen Wert zu übergeben, der auf die Ausführung der Funktion Einfluss nimmt. Wenn wir einen Parameter definiert so schreiben wir diesen einfach innerhalb der Klammern.
+Wir können eine Funktion beliebig oft aufrufen. Wird die Funktion nicht aufgerufen, so wird alles, was im Inneren der Funktion steht, ignoriert. 
+Parameter erlauben uns, einer Funktion einen Wert zu übergeben, der auf die Ausführung der Funktion Einfluss nimmt. Wenn wir einen Parameter definieren, so schreiben wir diesen einfach innerhalb der Klammern.
 
     function speak(message) {
         console.log("Wichtige Nachricht: " + message);
@@ -180,10 +180,10 @@ Wenn wir wollen, dass eine Funktion ein Ergebis zurückgibt, welches wir weiter 
     let result = add(10, 15);
     console.log(result); // 25 
 
-Nachdem wir einen Wert in einer Funktion zurückgegeben haben können keine weiteren Befehle mehr in der Funktion angegeben werden. Wenn wir weitere Befehle nach dem `return` angeben, so wird ein *unreachable code error* geworfen.
+Nachdem wir einen Wert in einer Funktion zurückgegeben haben, können keine weiteren Befehle mehr in der Funktion angegeben werden. Wenn wir weitere Befehle nach dem `return` angeben, so wird ein *unreachable code error* geworfen.
 
 ## Lebensdauer (Scope) von Variablen 
-Selbstverständlich können wir auch Variablen innerhalb einer Funktion deklarieren. Wichtig ist zu verstehen, dass diese Variablen nur innerhalb der Funktion zugänglich sind. Außerhalb von der Funktion ist eine solche Variable nicht deklariert und sie wird nach Ausführung der Funktion wieder gelöscht und jeder Wert den diese Variable hatte ist danach verloren, solange bis die Funktion wieder ausgeführt wird.
+Selbstverständlich können wir auch Variablen innerhalb einer Funktion deklarieren. Wichtig ist zu verstehen, dass diese Variablen nur innerhalb der Funktion zugänglich sind. Außerhalb von der Funktion ist eine solche Variable nicht deklariert und sie wird nach Ausführung der Funktion wieder gelöscht. Jeder Wert, den diese Variable hatte, ist danach verloren, solange bis die Funktion wieder ausgeführt wird.
 
     function func() {
         let a = 1;
@@ -191,7 +191,7 @@ Selbstverständlich können wir auch Variablen innerhalb einer Funktion deklarie
 
     console.log(a); // Wirft eine Fehlermeldung!
 
-Das gilt aber nicht falls wir in einer Funktion einer Variablen einen Wert zuweisen ohne, dass diese vorher initialisiert wurde. JavaScript geht dann implizit davon aus, dass diese Variable außerhalb global initialisiert wurde und macht diese auch außerhalb der Funktion verfügbar.
+Das gilt aber nicht, falls wir in einer Funktion einer Variablen einen Wert zuweisen, ohne, dass diese vorher initialisiert wurde. JavaScript geht dann implizit davon aus, dass diese Variable außerhalb global initialisiert wurde und macht diese auch außerhalb der Funktion verfügbar.
 
 
     function func() {
@@ -201,7 +201,7 @@ Das gilt aber nicht falls wir in einer Funktion einer Variablen einen Wert zuwei
     console.log(a); // Achtung funktioniert!
 
 ## Rekursion
-Selbstvertändlich können wir in einer Funktion auch andere Funktionen aufrufen solange diese darüber definert wurde. Überraschender ist es hingegen, dass wir eine Funktion auch in sich selbst aufrufen können. Eine solche Selbstreferenz bezeichnet man als **Rekursion**. Rekursionen sind auf den ersten Blick ein wenig verwirrend, erlauben es uns aber gelegentlich eine schwierige Berechnung auf einen einfacheren Fall zurückzuführen. Wichtig ist es bei Rekursion darauf zu achten, dass man nicht aus Versehen eine Endlosschleife auslöst und das Programm zum Absturz bringt. Am besten können wir dies an einem Beispiel verdeutlichen. Angenommen wir wollen die Fakultät `n = n*(n-1)*(n-2)*...*1` einer Zahl berechnen. So könnten wir dies mit einer rekursiven Funktion lösen.
+Selbstvertändlich können wir in einer Funktion auch andere Funktionen aufrufen, solange diese darüber definert wurden. Überraschend ist es hingegen, dass wir eine Funktion auch in sich selbst aufrufen können. Eine solche Selbstreferenz bezeichnet man als **Rekursion**. Rekursionen sind auf den ersten Blick ein wenig verwirrend, erlauben uns aber eine schwierige Berechnung auf einen einfacheren Fall zurückzuführen. Wichtig ist bei Rekursion darauf zu achten, dass man nicht aus Versehen eine Endlosschleife auslöst und das Programm zum Absturz bringt. Am besten können wir dies an einem Beispiel verdeutlichen. Angenommen wir wollen die Fakultät `n = n*(n-1)*(n-2)*...*1` einer Zahl berechnen. So könnten wir dies mit einer rekursiven Funktion lösen.
 
     function fakultaet(n) {
         if(n == 0) {
